@@ -11,7 +11,7 @@ let toString = card =>
 let make = (
   ~card: t,
   ~faceUp: bool,
-  ~rotation: float=0.0,
+  ~transform: string="",
   ~onClick: option<JsxEvent.Mouse.t => unit>=?,
 ) => {
   let description = switch card {
@@ -35,15 +35,6 @@ let make = (
       <p> {React.string("Return this card to your hand.")} </p>
     </>
   }
-
-  let transform = Array.joinWith(
-    [
-      `rotateZ(${Float.toString(rotation)}deg)`,
-      `rotateY(${Float.toString(0.0 -. rotation)}deg)`,
-      "rotateX(-5deg)",
-    ],
-    " ",
-  )
 
   <div
     className="card"

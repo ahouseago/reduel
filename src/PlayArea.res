@@ -7,11 +7,11 @@ let make = (~selectedCard, ~opponentCard, ~onClick) => {
   <div className="play-area-container">
     <div className="play-area">
       {switch selectedCard {
-      | Some(card) => <Card card faceUp=true />
+      | Some(card) => <Card card faceUp=false />
       | None => <div className="empty-card-slot"> {React.string("Select a card to play...")} </div>
       }}
       {switch opponentCard {
-      | Some(card) => <Card card faceUp=true />
+      | Some(card) => <Card card faceUp=false />
       | None =>
         <div className="empty-card-slot">
           {React.string("Waiting for opponent to select a card...")}
