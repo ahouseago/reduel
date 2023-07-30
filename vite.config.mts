@@ -7,6 +7,7 @@ import createReScriptPlugin from '@jihchi/vite-plugin-rescript';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: '/reduel/',
   plugins: [createReactPlugin(), createReScriptPlugin()],
   test: {
     include: ['tests/**/*_test.bs.js'],
